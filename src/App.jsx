@@ -13,7 +13,6 @@ import { Users } from './models';
 
 //Use next two lines only if syncing with the cloud
 import awsconfig from "./aws-exports";
-import SingleComponent from './SingleComponent';
 Amplify.configure(awsconfig);
 
 
