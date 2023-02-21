@@ -129,7 +129,7 @@ function App() {
 
         <h2 style={{ color: "#ff" }}>Collection Component</h2>
         <ProfileCardCollection />
-        <button onClick={() => saveUser()}>Save User</button>
+        {/* <button onClick={() => saveUser()}>Save User</button> */}
       </header>
     </div >
   )
