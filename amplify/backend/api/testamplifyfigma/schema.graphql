@@ -1,0 +1,11 @@
+type Users @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  surname: String
+  username: String
+  avatar: AWSURL
+  bio: String
+  followers: Int
+  following: Int
+}
+ 
