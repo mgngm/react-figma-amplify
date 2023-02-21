@@ -129,10 +129,7 @@ function App() {
         {user && (<ProfileCard user={user} />)}
 
         <h2 style={{ color: "#ff" }}>Collection Component</h2>
-        {/* <ProfileCardCollection /> */}
-
-        <SingleComponent />
-
+        <ProfileCardCollection />
         <button onClick={() => saveUser()}>Save User</button>
       </header>
     </div >
