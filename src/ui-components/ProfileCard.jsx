@@ -10,13 +10,17 @@ import { Users } from "../models";
 import {
   getOverrideProps,
   useDataStoreDeleteAction,
+  useDataStoreUpdateAction,
 } from "@aws-amplify/ui-react/internal";
 import { schema } from "../models/schema";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function ProfileCard(props) {
   const { user, overrides, ...rest } = props;
-  const buttonOnClick = useDataStoreDeleteAction({
+  const buttonTwoNineSevenSixSixNineZeroSevenOnClick = useDataStoreUpdateAction(
+    { fields: {}, id: user?.id, model: Users, schema: schema }
+  );
+  const buttonThreeSixSixOneTwoSixEightNineOnClick = useDataStoreDeleteAction({
     id: user?.id,
     model: Users,
     schema: schema,
@@ -27,7 +31,7 @@ export default function ProfileCard(props) {
       direction="column"
       width="320px"
       height="unset"
-      justifyContent="flex-start"
+      justifyContent="center"
       alignItems="center"
       position="relative"
       padding="24px 24px 24px 24px"
@@ -156,16 +160,34 @@ export default function ProfileCard(props) {
         ></Text>
       </Flex>
       <Button
+        width="unset"
+        height="unset"
         shrink="0"
         alignSelf="stretch"
+        backgroundColor="rgba(0,64,77,1)"
         size="large"
         isDisabled={false}
         variation="primary"
-        children="View Profile"
+        children="Update Profile"
         onClick={() => {
-          buttonOnClick();
+          buttonTwoNineSevenSixSixNineZeroSevenOnClick();
         }}
-        {...getOverrideProps(overrides, "Button")}
+        {...getOverrideProps(overrides, "Button29766907")}
+      ></Button>
+      <Button
+        width="unset"
+        height="unset"
+        shrink="0"
+        alignSelf="stretch"
+        backgroundColor="rgba(149,4,4,1)"
+        size="large"
+        isDisabled={false}
+        variation="primary"
+        children="Delete Profile"
+        onClick={() => {
+          buttonThreeSixSixOneTwoSixEightNineOnClick();
+        }}
+        {...getOverrideProps(overrides, "Button36612689")}
       ></Button>
     </Flex>
   );

@@ -17,6 +17,12 @@
       },
       "api": {
         "testamplifyfigma": {}
+      },
+      "function": {
+        "testamplifyfigma40e86cac": {
+          "deploymentBucketName": "amplify-testamplifyfigma-staging-85008-deployment",
+          "s3Key": "amplify-builds/testamplifyfigma40e86cac-7a4c65342b6d50416f31-build.zip"
+        }
       }
     }
   }

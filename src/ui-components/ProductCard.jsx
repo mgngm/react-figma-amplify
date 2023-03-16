@@ -19,7 +19,7 @@ import {
 } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function ProductCard(props) {
-  const { overrides, ...rest } = props;
+  const { title, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -65,6 +65,7 @@ export default function ProductCard(props) {
         <Text
           fontFamily="Inter"
           fontSize="20px"
+          label="Classic Long Sleeve T-Shirt"
           fontWeight="700"
           color="rgba(13,26,38,1)"
           lineHeight="25px"
@@ -81,7 +82,7 @@ export default function ProductCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Classic Long Sleeve T-Shirt"
+          children={title}
           {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
         ></Text>
         <Flex
@@ -97,6 +98,8 @@ export default function ProductCard(props) {
           {...getOverrideProps(overrides, "Ratings")}
         >
           <Rating
+            width="unset"
+            height="unset"
             shrink="0"
             size="large"
             {...getOverrideProps(overrides, "Rating")}
@@ -137,6 +140,8 @@ export default function ProductCard(props) {
           {...getOverrideProps(overrides, "Tags")}
         >
           <Badge
+            width="unset"
+            height="unset"
             shrink="0"
             size="small"
             variation="default"
@@ -144,6 +149,8 @@ export default function ProductCard(props) {
             {...getOverrideProps(overrides, "Badge29766804")}
           ></Badge>
           <Badge
+            width="unset"
+            height="unset"
             shrink="0"
             size="small"
             variation="default"
@@ -151,6 +158,8 @@ export default function ProductCard(props) {
             {...getOverrideProps(overrides, "Badge29766805")}
           ></Badge>
           <Badge
+            width="unset"
+            height="unset"
             shrink="0"
             size="small"
             variation="default"
@@ -235,6 +244,7 @@ export default function ProductCard(props) {
         </Flex>
         <Divider
           width="unset"
+          height="1px"
           shrink="0"
           alignSelf="stretch"
           size="small"

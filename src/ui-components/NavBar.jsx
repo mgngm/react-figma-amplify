@@ -204,6 +204,8 @@ export default function NavBar(props) {
         {...getOverrideProps(overrides, "Frame 32129767081")}
       >
         <SearchField
+          width="300px"
+          height="unset"
           shrink="0"
           placeholder="Placeholder"
           size="default"

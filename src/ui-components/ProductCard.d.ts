@@ -41,6 +41,8 @@ export declare type ProductCardOverridesProps = {
     Flirty?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type ProductCardProps = React.PropsWithChildren<Partial<FlexProps> & {
+    title?: React.ReactNode;
+} & {
     overrides?: ProductCardOverridesProps | undefined | null;
 }>;
 export default function ProductCard(props: ProductCardProps): React.ReactElement;

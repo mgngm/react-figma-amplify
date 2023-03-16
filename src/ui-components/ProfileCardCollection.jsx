@@ -30,9 +30,9 @@ export default function ProfileCardCollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Search..."
+      itemsPerPage={2}
       templateColumns="1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
@@ -46,7 +46,7 @@ export default function ProfileCardCollection(props) {
           user={item}
           height="auto"
           width="auto"
-          margin="10px 10px 10px 10px"
+          margin="2px 2px 2px 2px"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></ProfileCard>

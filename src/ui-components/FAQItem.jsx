@@ -9,7 +9,7 @@ import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Divider, Flex, Text } from "@aws-amplify/ui-react";
 export default function FAQItem(props) {
-  const { itemsSold, overrides, ...rest } = props;
+  const { overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -70,7 +70,7 @@ export default function FAQItem(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={itemsSold?.createdAt}
+            children="What’s the company?"
             {...getOverrideProps(overrides, "Title")}
           ></Text>
           <Text
@@ -93,13 +93,14 @@ export default function FAQItem(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={itemsSold?.id}
+            children="A general overview that includes the name of the company, year it was founded and its goal. For example: Company was founded in 2019, with a goal to bring better products to every home across the US."
             {...getOverrideProps(overrides, "Paragraph")}
           ></Text>
         </Flex>
       </Flex>
       <Divider
         width="unset"
+        height="1px"
         shrink="0"
         alignSelf="stretch"
         size="small"

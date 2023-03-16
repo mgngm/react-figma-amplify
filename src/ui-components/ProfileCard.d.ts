@@ -19,7 +19,8 @@ export declare type ProfileCardOverridesProps = {
     Followers?: PrimitiveOverrideProps<FlexProps>;
     MyIcon?: MyIconProps;
     "99 Followers"?: PrimitiveOverrideProps<TextProps>;
-    Button?: PrimitiveOverrideProps<ButtonProps>;
+    Button29766907?: PrimitiveOverrideProps<ButtonProps>;
+    Button36612689?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type ProfileCardProps = React.PropsWithChildren<Partial<FlexProps> & {
     user?: Users;
