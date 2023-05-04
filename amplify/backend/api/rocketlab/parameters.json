@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "rocketlab",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authrocketlabed3b1a01",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

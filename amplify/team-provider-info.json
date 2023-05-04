@@ -1,28 +1,22 @@
 {
-  "staging": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-testamplifyfigma-staging-85008-authRole",
-      "UnauthRoleArn": "arn:aws:iam::827603881742:role/amplify-testamplifyfigma-staging-85008-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::827603881742:role/amplify-testamplifyfigma-staging-85008-authRole",
+      "AuthRoleName": "amplify-rocketlab-dev-125952-authRole",
+      "UnauthRoleArn": "arn:aws:iam::827603881742:role/amplify-rocketlab-dev-125952-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::827603881742:role/amplify-rocketlab-dev-125952-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-testamplifyfigma-staging-85008-deployment",
-      "UnauthRoleName": "amplify-testamplifyfigma-staging-85008-unauthRole",
-      "StackName": "amplify-testamplifyfigma-staging-85008",
-      "StackId": "arn:aws:cloudformation:us-east-1:827603881742:stack/amplify-testamplifyfigma-staging-85008/9783d4a0-a78d-11ed-94c6-0a2401928a67",
-      "AmplifyAppId": "d7r61dd52bmpg"
+      "DeploymentBucketName": "amplify-rocketlab-dev-125952-deployment",
+      "UnauthRoleName": "amplify-rocketlab-dev-125952-unauthRole",
+      "StackName": "amplify-rocketlab-dev-125952",
+      "StackId": "arn:aws:cloudformation:us-east-1:827603881742:stack/amplify-rocketlab-dev-125952/ce7ffa40-ea6a-11ed-b689-0a74ee2c4061",
+      "AmplifyAppId": "d1l24bqg1u1stj"
     },
     "categories": {
       "auth": {
-        "testamplifyfigmab5c930b8": {}
+        "rocketlabed3b1a01": {}
       },
       "api": {
-        "testamplifyfigma": {}
-      },
-      "function": {
-        "testamplifyfigma40e86cac": {
-          "deploymentBucketName": "amplify-testamplifyfigma-staging-85008-deployment",
-          "s3Key": "amplify-builds/testamplifyfigma40e86cac-7a4c65342b6d50416f31-build.zip"
-        }
+        "rocketlab": {}
       }
     }
   }
