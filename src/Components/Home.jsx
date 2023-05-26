@@ -31,7 +31,7 @@ function Home() {
                   <h2 className="text-2xl font-bold">{feat.name}</h2>
                   <p className="">{truncate(feat.description, 80)}</p>
 
-                  <Link to={feat.url} className="bottom-1 left-1 inline-flex items-center w-auto px-3 py-2 text-sm font-medium text-center text-white bg-slate-700 rounded-lg hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300">
+                  <Link to={feat.url} className="bottom-1 left-1 inline-flex items-center w-auto px-3 py-2 text-sm font-medium text-center text-white bg-slate-700 rounded-lg hover:text-yellow-400 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-slate-300">
                       Explore Now <FaArrowRight className="w-4 h-4 ml-2 -mr-1" />
                   </Link>
                 </div>
