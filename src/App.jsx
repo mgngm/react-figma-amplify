@@ -7,6 +7,7 @@ import Labs from './Components/Labs';
 import Footer from './Components/Footer';
 import AuthComponent from './Components/AuthComponent';
 import ApiComponent from './Components/ApiComponent';
+import OAuthComponent from './Components/OAuthComponent';
 
 function Index() {
   return (
@@ -27,7 +28,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/labs" element={<Labs />} />
-          <Route path="/auth" element={<AuthComponent />} />
+          <Route path="/login" element={<AuthComponent />} />
+          <Route path="/auth" element={<OAuthComponent />} />
           <Route path="/api" element={<ApiComponent />} />
         </Routes>
         <Footer />

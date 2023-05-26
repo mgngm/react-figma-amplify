@@ -31,7 +31,19 @@ function Labs() {
                 </div>
 
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="flex flex-col gap-4 items-center">
+                    <div
+                        className="h-56 w-80 rounded-2xl shadow-lg p-6 flex flex-col gap-4 bg-gray-900 dark:text-white z-10">
+                        <h2 className="text-2xl font-bold text-purple-lt dark:text-yellow">Control your time</h2>
+                        <p>Plan simply your sessions of sleep, work, or meditation with a timer</p>
+                    </div>
+                    <div
+                        className="h-56 w-80 rounded-2xl shadow-lg p-6 flex flex-col gap-3 bg-gray-900 dark:text-white z-10">
+                        <h2 className="text-2xl font-bold text-purple-lt dark:text-yellow">Perfect environment</h2>
+                        <p>Background sounds will help you mask external noise, reduce stress, and relax</p>
+                    </div>
+                </div>
+                {/* <div className="grid grid-cols-3 gap-4">
                     {
                         topics.map(topic => (
                             <div key={topic.id} className="flex flex-wrap justify-between items-center box-border w-64 p-4 rounded-md bg-slate-500">
@@ -40,7 +52,7 @@ function Labs() {
                             </div>
                         ))
                     }
-                </div>
+                </div> */}
             </div>
         </div>
     )

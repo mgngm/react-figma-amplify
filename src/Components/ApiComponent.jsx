@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 
 import { API, graphqlOperation } from 'aws-amplify';
-import { listItems } from './../graphql/queries'
-import { createItems, deleteItems } from './../graphql/mutations';
+import { listTodos } from './../graphql/queries'
+import { createTodo, deleteTodo } from './../graphql/mutations';
 
 import { FaTimesCircle } from "react-icons/fa";
 
@@ -10,10 +10,11 @@ import { Auth as AuthProvider } from "../contexts/Auth";
 
 
 function ApiComponent() {
-    const [name, setName] = useContext(AuthProvider);
 
-    const [title, setTitle] = useState()
-    const [description, setDescription] = useState()
+    const ininState = {name:"",description:""}
+
+    const [todo, setTodo] = useState(ininState)
+
     const [results, setResults] = useState([])
     const [error, setError] = useState()
 
@@ -22,9 +23,8 @@ function ApiComponent() {
         setError("")
 
         try {
-            await API.graphql(graphqlOperation(createItems, { input: { title, description, severity: "medium" } }));
-            setTitle("")
-            setDescription("")
+            await API.graphql(graphqlOperation(createTodo, { input: { name: todo.name, description:todo.description} }));
+            setTodo(ininState)
             checkUser()
         } catch (error) {
             console.log(error)
@@ -36,7 +36,7 @@ function ApiComponent() {
     async function deleteItem(id) {
         setError("")
         try {
-            const res = await API.graphql(graphqlOperation(deleteItems, { input: { id } }));
+            const res = await API.graphql(graphqlOperation(deleteTodo, { input: { id } }));
             // console.log(res.errors[0].errorType)
             checkUser()
         } catch (error) {
@@ -53,8 +53,8 @@ function ApiComponent() {
 
     async function checkUser() {
         try {
-            const itemsData = await API.graphql(graphqlOperation(listItems))
-            const items = itemsData.data.listItems.items
+            const todoData = await API.graphql(graphqlOperation(listTodos))
+            const items = todoData.data.listTodos.items
             setResults(items)
         } catch (err) {
             setResults([])
@@ -69,6 +69,10 @@ function ApiComponent() {
             }
 
         }
+    }
+
+    function setInput(key, value) {
+        setTodo({ ...todo, [key]: value })
     }
 
     useEffect(() => {
@@ -89,8 +93,8 @@ function ApiComponent() {
 
                 <div>
                     <form className="flex flex-col gap-2 items-center mb-4">
-                        <input value={title || ""} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Title" className="rounded w-full p-4 text-gray-800 border-gray-200 bg-white" />
-                        <input value={description || ""} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Description" className="rounded w-full p-4 text-gray-800 border-gray-200 bg-white" />
+                        <input value={todo.name || ""}  onChange={event => setInput('name', event.target.value)}type="text" placeholder="Title" className="rounded w-full p-4 text-gray-800 border-gray-200 bg-white" />
+                        <input value={todo.description || ""} onChange={event => setInput('description', event.target.value)} type="text" placeholder="Description" className="rounded w-full p-4 text-gray-800 border-gray-200 bg-white" />
                         <button onClick={(e) => addItem(e)} className="px-8 bg-indigo-500 rounded text-white font-bold p-4 uppercase w-full">Add</button>
                         <p className="text-sm text-red-400 py-4">{error}</p>
                     </form>
@@ -100,7 +104,7 @@ function ApiComponent() {
                     {results.map((res) => (
                         <div key={res.id} className="flex justify-between hover:bg-red-200 bg-gray-200 text-gray-900 p-4 mb-2 rounded-md">
                             <div>
-                                <p>{res.title}</p>
+                                <p>{res.name}</p>
                                 <p className="text-xs text-gray-400">{res.owner}</p>
                             </div>
                             <span onClick={() => deleteItem(res.id)} className="cursor-pointer hover:text-red-500 text-xl"><FaTimesCircle className="text-red-600" /></span>

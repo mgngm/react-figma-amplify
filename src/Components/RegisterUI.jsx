@@ -68,32 +68,32 @@ function RegisterUI({ params }) {
     }
 
     return (
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                <h1 className="text-xl font-bold leading-tight tracking-tight text-white">
                     {showOTP ? "Confirm your e-mail" : "Sign up for an account"}
                 </h1>
 
                 {showOTP ? (<form className="space-y-4 md:space-y-6">
                     <div>
-                        <label htmlFor="otp" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your OTP</label>
-                        <input type="text" name="otp" id="otp" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" onChange={(e) => setOtp(e.target.value)} />
+                        <label htmlFor="otp" className="block mb-2 text-sm font-medium text-white">Enter Your OTP</label>
+                        <input type="text" name="otp" id="otp" className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" required="" onChange={(e) => setOtp(e.target.value)} />
                     </div>
-                    <button onClick={(e) => confirmSignUp(e)} className="w-full text-black bg-yellow-100 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Confrim OTP</button>
-                    <button onClick={(e) => resendConfirmationCode(e)} className="w-full text-black bg-purple-100 hover:bg-purple-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Resend Confirmation</button>
+                    <button onClick={(e) => confirmSignUp(e)} className="w-full text-black bg-yellow-100 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Confrim OTP</button>
+                    <button onClick={(e) => resendConfirmationCode(e)} className="w-full text-black bg-purple-100 hover:bg-purple-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Resend Confirmation</button>
                 </form >) : (
                     <form className="space-y-4 md:space-y-6">
                         <div>
-                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                            <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="" onChange={(e) => setUsername(e.target.value)} />
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">Your email</label>
+                            <input type="email" name="email" id="email" className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="name@company.com" required="" onChange={(e) => setUsername(e.target.value)} />
                         </div>
                         <div>
-                            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                            <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" onChange={(e) => setPassword(e.target.value)} />
+                            <label htmlFor="password" className="block mb-2 text-sm font-medium text-white">Password</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••" className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" required="" onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        <button onClick={(e) => signUp(e)} className="w-full text-black bg-yellow-100 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign up</button>
-                        <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                            already a memeber? <a onClick={() => authState(false)} className="font-medium cursor-pointer hover:underline dark:text-primary-500">Sign in</a>
+                        <button onClick={(e) => signUp(e)} className="w-full text-black bg-yellow-100 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign up</button>
+                        <p className="text-sm font-light text-gray-400">
+                            already a memeber? <a onClick={() => authState(false)} className="font-medium cursor-pointer hover:underline">Sign in</a>
                         </p>
                     </form >)
                 }

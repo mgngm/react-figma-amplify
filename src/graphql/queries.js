@@ -1,13 +1,43 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getItems = /* GraphQL */ `
-  query GetItems($id: ID!) {
-    getItems(id: $id) {
+export const getTodo = /* GraphQL */ `
+  query GetTodo($id: ID!) {
+    getTodo(id: $id) {
       id
-      title
+      name
       description
-      severity
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listTodos = /* GraphQL */ `
+  query ListTodos(
+    $filter: ModelTodoFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getItem = /* GraphQL */ `
+  query GetItem($id: ID!) {
+    getItem(id: $id) {
+      id
+      name
+      description
       createdAt
       updatedAt
       owner
@@ -16,16 +46,15 @@ export const getItems = /* GraphQL */ `
 `;
 export const listItems = /* GraphQL */ `
   query ListItems(
-    $filter: ModelItemsFilterInput
+    $filter: ModelItemFilterInput
     $limit: Int
     $nextToken: String
   ) {
     listItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
+        name
         description
-        severity
         createdAt
         updatedAt
         owner

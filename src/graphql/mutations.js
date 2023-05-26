@@ -1,48 +1,90 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createItems = /* GraphQL */ `
-  mutation CreateItems(
-    $input: CreateItemsInput!
-    $condition: ModelItemsConditionInput
+export const createTodo = /* GraphQL */ `
+  mutation CreateTodo(
+    $input: CreateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    createItems(input: $input, condition: $condition) {
+    createTodo(input: $input, condition: $condition) {
       id
-      title
+      name
       description
-      severity
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const updateItems = /* GraphQL */ `
-  mutation UpdateItems(
-    $input: UpdateItemsInput!
-    $condition: ModelItemsConditionInput
+export const updateTodo = /* GraphQL */ `
+  mutation UpdateTodo(
+    $input: UpdateTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    updateItems(input: $input, condition: $condition) {
+    updateTodo(input: $input, condition: $condition) {
       id
-      title
+      name
       description
-      severity
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const deleteItems = /* GraphQL */ `
-  mutation DeleteItems(
-    $input: DeleteItemsInput!
-    $condition: ModelItemsConditionInput
+export const deleteTodo = /* GraphQL */ `
+  mutation DeleteTodo(
+    $input: DeleteTodoInput!
+    $condition: ModelTodoConditionInput
   ) {
-    deleteItems(input: $input, condition: $condition) {
+    deleteTodo(input: $input, condition: $condition) {
       id
-      title
+      name
       description
-      severity
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const createItem = /* GraphQL */ `
+  mutation CreateItem(
+    $input: CreateItemInput!
+    $condition: ModelItemConditionInput
+  ) {
+    createItem(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateItem = /* GraphQL */ `
+  mutation UpdateItem(
+    $input: UpdateItemInput!
+    $condition: ModelItemConditionInput
+  ) {
+    updateItem(input: $input, condition: $condition) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteItem = /* GraphQL */ `
+  mutation DeleteItem(
+    $input: DeleteItemInput!
+    $condition: ModelItemConditionInput
+  ) {
+    deleteItem(input: $input, condition: $condition) {
+      id
+      name
+      description
       createdAt
       updatedAt
       owner

@@ -5,17 +5,11 @@ import './index.css'
 
 import { Amplify } from 'aws-amplify';
 
-import "@aws-amplify/ui-react/styles.css";
-
 import { AuthProvider } from "./contexts/Auth";
 
 import awsConfig from "./aws-exports";
 
-Amplify.configure({
-  ...awsConfig, oauth: {
-
-  }
-});
+Amplify.configure(awsConfig);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

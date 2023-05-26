@@ -9,9 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@aws-amplify/datastore": "^4.0.14",
-    "@aws-amplify/ui-react": "^4.3.7",
-    "aws-amplify": "^5.0.14",
+    "aws-amplify": "5.0.24",
+    "global": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",

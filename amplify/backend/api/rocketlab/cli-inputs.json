@@ -4,14 +4,17 @@
     "apiName": "rocketlab",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 7
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authrocketlabed3b1a01"
     },
     "additionalAuthTypes": [
       {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authrocketlabed3b1a01"
+        "mode": "API_KEY",
+        "expirationTime": 5,
+        "apiKeyExpirationDate": "2023-05-31T06:47:21.329Z",
+        "keyDescription": "usage key"
       }
-    ]
+    ],
+    "conflictResolution": {}
   }
 }
