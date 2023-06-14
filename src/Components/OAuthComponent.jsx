@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Amplify, Hub, Auth } from 'aws-amplify';
-// import { CognitoHostedUIIdentityProvider } from '@aws-amplify/auth';\
-import { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth/lib-esm/types";
+import { CognitoHostedUIIdentityProvider } from '@aws-amplify/auth';
 import { FaGoogle, FaAmazon, FaFacebookF, FaApple } from "react-icons/fa";
 
 function OAuthComponent() {

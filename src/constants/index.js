@@ -16,87 +16,71 @@ const features = [
         ]
     },
     {
-        "id": "2",
-        "name": "Amplify API",
-        "url": "/api",
-        "description": "Amplify API allows you to create and interact with a backend API for your application.",
-        "features": [
-            "GraphQL API with real-time subscriptions",
-            "RESTful API support",
-            "Automatic API generation from schema definition",
-            "Authentication and authorization integration",
-            "Custom resolvers and mapping templates",
-            "Data validation and transformation",
-            "Pagination and filtering",
-            "Lambda function integration",
-            "Database integration with AWS AppSync",
-            "API versioning and stages"
+        id: "2",
+        name: "Amplify Storage",
+        url: "/storage",
+        description: "Amplify Storage provides a secure and scalable storage solution for your application.",
+        features: [
+            "File uploads and downloads",
+            "Secure access control",
+            "Serverless backend for file processing",
+            "Integration with Amazon S3",
+            "Batch operations for optimizing performance"
         ]
     },
     {
-        "id": "3",
-        "name": "Amplify PubSub",
-        "url": "/pubsub",
-        "description": "Amplify PubSub provides a publish-subscribe messaging pattern for real-time communication in your application.",
-        "features": [
-            "Real-time messaging with publish and subscribe",
-            "Supports multiple clients and subscribers",
-            "Topic-based message routing",
-            "Integration with AWS SNS (Simple Notification Service)",
-            "Event-driven architecture",
-            "Serverless and scalable",
-            "Push notifications",
-            "Chat and messaging applications"
+        id: "3",
+        name: "Amplify PubSub",
+        url: "/pubsub",
+        description: "Amplify PubSub enables real-time messaging and event-driven communication in your application.",
+        features: [
+            "Publish/subscribe messaging pattern",
+            "Real-time data updates",
+            "Scalable and reliable message delivery",
+            "Integration with AWS IoT Core",
+            "Support for topic-based message filtering"
         ]
     },
     {
-        "id": "4",
-        "name": "Amplify Functions",
-        "url": "/functions",
-        "description": "Amplify Functions enables you to write and deploy serverless functions as part of your application's backend logic.",
-        "features": [
-            "Serverless computing with AWS Lambda",
-            "Event-driven architecture",
-            "Custom business logic and workflows",
-            "Integration with other Amplify services",
-            "Database triggers and data processing",
-            "Scalable and cost-effective",
-            "Microservices architecture",
-            "Offline and background processing",
-            "Scheduled tasks and cron jobs"
+        id: "4",
+        name: "Amplify API (GraphQL)",
+        url: "/api",
+        description: "Amplify API allows you to easily create and manage a GraphQL API for your application.",
+        features: [
+            "Schema definition and data modeling",
+            "Automatic generation of GraphQL operations",
+            "Real-time subscriptions",
+            "Fine-grained access control",
+            "Serverless resolvers",
+            "Integration with AWS AppSync"
         ]
     },
     {
-        "id": "5",
-        "name": "Amplify Analytics",
-        "url": "/analytics",
-        "description": "Amplify Analytics provides insights into user behavior and app usage for data-driven decision making.",
-        "features": [
-          "Capture and analyze user events and interactions",
-          "Track app usage, sessions, and retention",
-          "Segment and target user groups",
-          "Integrate with data visualization tools",
-          "Monitor performance and user experience",
-          "Custom event tracking",
-          "Real-time and historical data analysis"
+        id: "5",
+        name: "Amplify Functions",
+        url: "/functions",
+        description: "Amplify Functions enables you to run serverless functions and logic in the cloud.",
+        features: [
+            "Serverless compute for custom backend logic",
+            "Support for popular programming languages",
+            "Auto-scaling and high availability",
+            "Integration with AWS Lambda",
+            "Event-driven architecture"
         ]
-      },{
-        "id": "6",
-        "name": "Amplify Integration",
-        "url": "/intergrations",
-        "description": "Amplify Integration enables seamless integration with external services and systems.",
-        "features": [
-          "Connect to third-party APIs and services",
-          "Data synchronization and replication",
-          "Webhooks and event-driven workflows",
-          "Real-time data updates",
-          "Custom integrations",
-          "Extensible and flexible",
-          "Error handling and retries",
-          "Transform and manipulate data",
-          "Legacy system integration"
+    },
+    {
+        id: "6",
+        name: "Amplify Analytics",
+        url: "/analytics",
+        description: "Amplify Analytics provides insights into user behavior and usage patterns in your application.",
+        features: [
+            "Event tracking and analysis",
+            "User segmentation",
+            "Real-time and historical analytics",
+            "Integration with Amazon Pinpoint",
+            "Custom dashboards and reports"
         ]
-      }
+    }
 ]
 
 export default features;

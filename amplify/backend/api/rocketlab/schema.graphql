@@ -1,21 +1,55 @@
-# This "input" configures a global authorization rule to enable public access to
-# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
-
 type Todo @model @auth(rules: [
-  { allow: private, operations: [read]}, ##api key for default public 
-  { allow: owner, operations: [read, create, update, delete]} ## owner authorization or switch to private to allow signed in users
-]){
+  { allow: public, operations: [read] },
+  { allow: owner }
+]) {
   id: ID!
   name: String!
   description: String
+  complete: String
 }
 
-type Item @model @auth(rules: [
-  { allow: private, operations: [read]}, ##api key for default public 
-  { allow: owner, operations: [read, create, update, delete]} ## owner authorization or switch to private to allow signed in users
-]){
+type User
+  @model
+  @auth(
+    rules: [
+        { allow: public, operations: [read] },
+        { allow: owner }
+    ]
+  ) {
   id: ID!
   name: String!
-  description: String
+  email: String!
+  accounts: [Accounts]! @hasMany
+  expenses: [Expenses]! @hasMany
+}
+
+type Accounts
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] },
+      { allow: owner }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  amount: Float!
+  user: User! @belongsTo
+}
+
+type Expenses
+  @model
+  @auth(
+    rules: [
+        { allow: public, operations: [read] },
+        { allow: owner }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String!
+  category: String!
+  amount: Float!
+  date: String!
+  user: User! @belongsTo
 }

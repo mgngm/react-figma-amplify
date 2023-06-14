@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import planet from "./../assets/bubble.png";
 
 function Hero() {
+
+
+    console.log( process.env);
+
     return (
         <div className="flex flex-col gap-24">
             <div className="flex flex-col gap-20">
@@ -16,13 +20,13 @@ function Hero() {
                                 <div className="w-6 h-1.5 bg-purple-dk dark:bg-yellow animate-blink"></div>
                             </div> */}
                         </div>
-                        <h2 className="text-xl">
+                        <h2 className="text-xl md:mb-16">
                             All amplify demos in one centralised playground for Troubleshooting
                         </h2>
                         {/* <Link to="/labs" className="mt-12 flex-1 flex items-center bg-yellow-50 gap-2 px-6 py-4 rounded-full hover:scale-105 transition-all font-bold text-gray-950 text-xl shadow-xl">
                             Explore Now</Link> */}
                     </div>
-                    <div className="relative w-full max-w-lg">
+                    <div className="relative w-full max-w-lg sm:max-w-sm">
                         <img src={planet} alt="image" width="100%" className="absolute sm:-bottom-40 md:-right-28 left-0 bottom-0 animate-float z-40" />
                     </div>
                 </div>

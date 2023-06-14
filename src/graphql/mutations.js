@@ -10,6 +10,7 @@ export const createTodo = /* GraphQL */ `
       id
       name
       description
+      complete
       createdAt
       updatedAt
       owner
@@ -25,6 +26,7 @@ export const updateTodo = /* GraphQL */ `
       id
       name
       description
+      complete
       createdAt
       updatedAt
       owner
@@ -40,53 +42,324 @@ export const deleteTodo = /* GraphQL */ `
       id
       name
       description
+      complete
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const createItem = /* GraphQL */ `
-  mutation CreateItem(
-    $input: CreateItemInput!
-    $condition: ModelItemConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createItem(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
       name
-      description
+      email
+      accounts {
+        items {
+          id
+          name
+          amount
+          createdAt
+          updatedAt
+          userAccountsId
+          owner
+        }
+        nextToken
+      }
+      expenses {
+        items {
+          id
+          title
+          description
+          category
+          amount
+          date
+          createdAt
+          updatedAt
+          userExpensesId
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const updateItem = /* GraphQL */ `
-  mutation UpdateItem(
-    $input: UpdateItemInput!
-    $condition: ModelItemConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateItem(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
       name
-      description
+      email
+      accounts {
+        items {
+          id
+          name
+          amount
+          createdAt
+          updatedAt
+          userAccountsId
+          owner
+        }
+        nextToken
+      }
+      expenses {
+        items {
+          id
+          title
+          description
+          category
+          amount
+          date
+          createdAt
+          updatedAt
+          userExpensesId
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const deleteItem = /* GraphQL */ `
-  mutation DeleteItem(
-    $input: DeleteItemInput!
-    $condition: ModelItemConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteItem(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       id
       name
-      description
+      email
+      accounts {
+        items {
+          id
+          name
+          amount
+          createdAt
+          updatedAt
+          userAccountsId
+          owner
+        }
+        nextToken
+      }
+      expenses {
+        items {
+          id
+          title
+          description
+          category
+          amount
+          date
+          createdAt
+          updatedAt
+          userExpensesId
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
+      owner
+    }
+  }
+`;
+export const createAccounts = /* GraphQL */ `
+  mutation CreateAccounts(
+    $input: CreateAccountsInput!
+    $condition: ModelAccountsConditionInput
+  ) {
+    createAccounts(input: $input, condition: $condition) {
+      id
+      name
+      amount
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userAccountsId
+      owner
+    }
+  }
+`;
+export const updateAccounts = /* GraphQL */ `
+  mutation UpdateAccounts(
+    $input: UpdateAccountsInput!
+    $condition: ModelAccountsConditionInput
+  ) {
+    updateAccounts(input: $input, condition: $condition) {
+      id
+      name
+      amount
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userAccountsId
+      owner
+    }
+  }
+`;
+export const deleteAccounts = /* GraphQL */ `
+  mutation DeleteAccounts(
+    $input: DeleteAccountsInput!
+    $condition: ModelAccountsConditionInput
+  ) {
+    deleteAccounts(input: $input, condition: $condition) {
+      id
+      name
+      amount
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userAccountsId
+      owner
+    }
+  }
+`;
+export const createExpenses = /* GraphQL */ `
+  mutation CreateExpenses(
+    $input: CreateExpensesInput!
+    $condition: ModelExpensesConditionInput
+  ) {
+    createExpenses(input: $input, condition: $condition) {
+      id
+      title
+      description
+      category
+      amount
+      date
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userExpensesId
+      owner
+    }
+  }
+`;
+export const updateExpenses = /* GraphQL */ `
+  mutation UpdateExpenses(
+    $input: UpdateExpensesInput!
+    $condition: ModelExpensesConditionInput
+  ) {
+    updateExpenses(input: $input, condition: $condition) {
+      id
+      title
+      description
+      category
+      amount
+      date
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userExpensesId
+      owner
+    }
+  }
+`;
+export const deleteExpenses = /* GraphQL */ `
+  mutation DeleteExpenses(
+    $input: DeleteExpensesInput!
+    $condition: ModelExpensesConditionInput
+  ) {
+    deleteExpenses(input: $input, condition: $condition) {
+      id
+      title
+      description
+      category
+      amount
+      date
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userExpensesId
       owner
     }
   }

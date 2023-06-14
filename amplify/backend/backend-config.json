@@ -1,5 +1,19 @@
 {
   "api": {
+    "apif2e814d4": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "rocketlab43e17d50"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "rocketlab": {
       "dependsOn": [
         {
@@ -14,19 +28,17 @@
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
-              "apiKeyConfig": {
-                "apiKeyExpirationDate": "2023-05-31T06:47:21.329Z",
-                "apiKeyExpirationDays": 5,
-                "description": "usage key"
-              },
-              "authenticationType": "API_KEY"
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authrocketlabed3b1a01"
+              }
             }
           ],
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authrocketlabed3b1a01"
-            }
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
           }
         }
       },
@@ -60,6 +72,38 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "rocketlab43e17d50": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_rocketlab43e17d50_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rocketlab43e17d50"
+        }
+      ]
+    },
+    "AMPLIFY_function_rocketlab43e17d50_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rocketlab43e17d50"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "s3a86a7b25": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

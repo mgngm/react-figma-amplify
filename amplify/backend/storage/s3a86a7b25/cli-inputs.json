@@ -1,0 +1,15 @@
+{
+  "resourceName": "s3a86a7b25",
+  "policyUUID": "a86a7b25",
+  "bucketName": "rocketlab049fb22f2b3047c3925be26d1c22c079",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

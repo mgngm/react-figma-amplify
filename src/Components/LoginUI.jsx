@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-
+import { CognitoHostedUIIdentityProvider } from '@aws-amplify/auth';
 import { Auth as AuthContext } from '../contexts/Auth'
 import { Auth } from 'aws-amplify';
+
+import { FaGoogle } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 
@@ -35,6 +37,12 @@ function LoginUI({ params }) {
         }
     }
 
+    function loginUI() {
+        Auth.federatedSignIn({ provider: CognitoHostedUIIdentityProvider.Google }).then(res=>{
+            console.log(res);
+        }).catch(err=>console.error(err))
+    }
+
 
     return (
         <div className="w-full rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 border-gray-700">
@@ -62,7 +70,14 @@ function LoginUI({ params }) {
                         </div>
                         <a href="#" className="text-sm font-medium hover:underline">Forgot password?</a>
                     </div>
-                    <button onClick={(e) => signIn(e)} className="w-full text-black bg-yellow-100 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">{loading ? "Loading..." : "Sign In"}</button>
+                    <div className="flex items-center justify-between gap-2">
+                        <button onClick={(e) => signIn(e)} className="w-full text-black bg-yellow-100 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">{loading ? "Loading..." : "Sign In"}</button>
+
+                        <button onClick={() => loginUI()} type="button" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800 inline-flex items-center">
+                            <FaGoogle className='mr-2' />
+                            Google Sign In
+                        </button>
+                    </div>
                     <p className="text-sm font-light text-gray-400">
                         Don’t have an account yet? <a onClick={() => authState(true)} className="font-medium cursor-pointer hover:underline text-primary-500">Sign up</a>
                     </p>

@@ -10,6 +10,7 @@ export const onCreateTodo = /* GraphQL */ `
       id
       name
       description
+      complete
       createdAt
       updatedAt
       owner
@@ -25,6 +26,7 @@ export const onUpdateTodo = /* GraphQL */ `
       id
       name
       description
+      complete
       createdAt
       updatedAt
       owner
@@ -40,53 +42,324 @@ export const onDeleteTodo = /* GraphQL */ `
       id
       name
       description
+      complete
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const onCreateItem = /* GraphQL */ `
-  subscription OnCreateItem(
-    $filter: ModelSubscriptionItemFilterInput
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser(
+    $filter: ModelSubscriptionUserFilterInput
     $owner: String
   ) {
-    onCreateItem(filter: $filter, owner: $owner) {
+    onCreateUser(filter: $filter, owner: $owner) {
       id
       name
-      description
+      email
+      accounts {
+        items {
+          id
+          name
+          amount
+          createdAt
+          updatedAt
+          userAccountsId
+          owner
+        }
+        nextToken
+      }
+      expenses {
+        items {
+          id
+          title
+          description
+          category
+          amount
+          date
+          createdAt
+          updatedAt
+          userExpensesId
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const onUpdateItem = /* GraphQL */ `
-  subscription OnUpdateItem(
-    $filter: ModelSubscriptionItemFilterInput
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser(
+    $filter: ModelSubscriptionUserFilterInput
     $owner: String
   ) {
-    onUpdateItem(filter: $filter, owner: $owner) {
+    onUpdateUser(filter: $filter, owner: $owner) {
       id
       name
-      description
+      email
+      accounts {
+        items {
+          id
+          name
+          amount
+          createdAt
+          updatedAt
+          userAccountsId
+          owner
+        }
+        nextToken
+      }
+      expenses {
+        items {
+          id
+          title
+          description
+          category
+          amount
+          date
+          createdAt
+          updatedAt
+          userExpensesId
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       owner
     }
   }
 `;
-export const onDeleteItem = /* GraphQL */ `
-  subscription OnDeleteItem(
-    $filter: ModelSubscriptionItemFilterInput
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser(
+    $filter: ModelSubscriptionUserFilterInput
     $owner: String
   ) {
-    onDeleteItem(filter: $filter, owner: $owner) {
+    onDeleteUser(filter: $filter, owner: $owner) {
       id
       name
-      description
+      email
+      accounts {
+        items {
+          id
+          name
+          amount
+          createdAt
+          updatedAt
+          userAccountsId
+          owner
+        }
+        nextToken
+      }
+      expenses {
+        items {
+          id
+          title
+          description
+          category
+          amount
+          date
+          createdAt
+          updatedAt
+          userExpensesId
+          owner
+        }
+        nextToken
+      }
       createdAt
       updatedAt
+      owner
+    }
+  }
+`;
+export const onCreateAccounts = /* GraphQL */ `
+  subscription OnCreateAccounts(
+    $filter: ModelSubscriptionAccountsFilterInput
+    $owner: String
+  ) {
+    onCreateAccounts(filter: $filter, owner: $owner) {
+      id
+      name
+      amount
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userAccountsId
+      owner
+    }
+  }
+`;
+export const onUpdateAccounts = /* GraphQL */ `
+  subscription OnUpdateAccounts(
+    $filter: ModelSubscriptionAccountsFilterInput
+    $owner: String
+  ) {
+    onUpdateAccounts(filter: $filter, owner: $owner) {
+      id
+      name
+      amount
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userAccountsId
+      owner
+    }
+  }
+`;
+export const onDeleteAccounts = /* GraphQL */ `
+  subscription OnDeleteAccounts(
+    $filter: ModelSubscriptionAccountsFilterInput
+    $owner: String
+  ) {
+    onDeleteAccounts(filter: $filter, owner: $owner) {
+      id
+      name
+      amount
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userAccountsId
+      owner
+    }
+  }
+`;
+export const onCreateExpenses = /* GraphQL */ `
+  subscription OnCreateExpenses(
+    $filter: ModelSubscriptionExpensesFilterInput
+    $owner: String
+  ) {
+    onCreateExpenses(filter: $filter, owner: $owner) {
+      id
+      title
+      description
+      category
+      amount
+      date
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userExpensesId
+      owner
+    }
+  }
+`;
+export const onUpdateExpenses = /* GraphQL */ `
+  subscription OnUpdateExpenses(
+    $filter: ModelSubscriptionExpensesFilterInput
+    $owner: String
+  ) {
+    onUpdateExpenses(filter: $filter, owner: $owner) {
+      id
+      title
+      description
+      category
+      amount
+      date
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userExpensesId
+      owner
+    }
+  }
+`;
+export const onDeleteExpenses = /* GraphQL */ `
+  subscription OnDeleteExpenses(
+    $filter: ModelSubscriptionExpensesFilterInput
+    $owner: String
+  ) {
+    onDeleteExpenses(filter: $filter, owner: $owner) {
+      id
+      title
+      description
+      category
+      amount
+      date
+      user {
+        id
+        name
+        email
+        accounts {
+          nextToken
+        }
+        expenses {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      userExpensesId
       owner
     }
   }

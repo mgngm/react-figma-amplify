@@ -16,7 +16,17 @@
         "rocketlabed3b1a01": {}
       },
       "api": {
-        "rocketlab": {}
+        "rocketlab": {},
+        "apif2e814d4": {}
+      },
+      "function": {
+        "rocketlab43e17d50": {
+          "deploymentBucketName": "amplify-rocketlab-dev-125952-deployment",
+          "s3Key": "amplify-builds/rocketlab43e17d50-4e5544656f4b38736f5a-build.zip"
+        }
+      },
+      "storage": {
+        "s3a86a7b25": {}
       }
     }
   }
